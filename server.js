@@ -32,9 +32,12 @@ app
 
     // MongoDB
     mongoose.Promise = Promise
+    mongoose.set('useNewUrlParser', true)
+    mongoose.set('useFindAndModify', false)
+    mongoose.set('useCreateIndex', true)
     mongoose.connect(
       Keys.MONGODB_URI,
-      { useNewUrlParser: true }
+      { useNewUrlParser: true, useUnifiedTopology: true  }
     )
     const db = mongoose.connection
     db.on('error', console.error.bind(console, 'connection error:'))

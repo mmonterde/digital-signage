@@ -1,8 +1,10 @@
 const Display = require('../models/Display')
 const CommonHelper = require('./common_helper')
+const console = require('console')
 
 function addWidget(req, res) {
   let widget = req.crudify.result
+  console.log(widget)
   return Display.findById(widget.display)
     .then(display => {
       if (!display) return res.status(404).json({ error: 'Display not found' })
