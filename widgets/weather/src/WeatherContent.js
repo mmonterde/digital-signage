@@ -20,49 +20,49 @@ const API_KEY = 'da6ef4bf43eed800fdadd4a728766089'
 const API_URL = 'http://api.openweathermap.org/data/2.5'
 
 class WeatherContent extends Component {
-  constructor(props) {
-    super(props)
+    constructor(props) {
+        super(props)
 
-    this.state = {}
-  }
+        this.state = {}
+    }
 
-  componentDidMount() {
-    const { data: { unit = DEFAULT_UNIT, zip = DEFAULT_ZIP } = {} } = this.props
-    axios
-      .get(`${API_URL}/weather?zip=${zip},us&apiKey=${API_KEY}&units=${unit}`)
-      .then(({ data }) => {
-        const {
-          name,
-          weather,
-          main: { temp }
-        } = data
-        const { icon, description } = weather[0]
-        this.setState({ name, icon, temp, description })
-      })
-  }
+    componentDidMount() {
+        const { data: { unit = DEFAULT_UNIT, zip = DEFAULT_ZIP } = {} } = this.props
+        axios
+            .get(`${API_URL}/weather?zip=${zip},us&apiKey=${API_KEY}&units=${unit}`)
+            .then(({ data }) => {
+                const {
+                    name,
+                    weather,
+                    main: { temp }
+                } = data
+                const { icon, description } = weather[0]
+                this.setState({ name, icon, temp, description })
+            })
+    }
 
-  render() {
-    const { name, icon, temp, description } = this.state
-    return (
-      <div className='weather'>
-        <div className='bgicon'>
-          <WeatherIcon icon={icon} />
-        </div>
-        <div className='info'>
-          <div className='temp'>{Math.round(temp)}°</div>
-          <div className='desc'>{description}</div>
-          <div className='location'>
-            <div className='marker'>
-              <FontAwesomeIcon icon={faMapMarker} size='xs' fixedWidth />
-            </div>
-            <div className='name'>{name}</div>
-          </div>
-        </div>
-        <div className='icon'>
-          <WeatherIcon icon={icon} />
-        </div>
-        <style jsx>
-          {`
+    render() {
+        const { name, icon, temp, description } = this.state
+        return (
+            <div className='weather'>
+                <div className='bgicon'>
+                    <WeatherIcon icon={icon} />
+                </div>
+                <div className='info'>
+                    <div className='temp'>{Math.round(temp)}°</div>
+                    <div className='desc'>{description}</div>
+                    <div className='location'>
+                        <div className='marker'>
+                            <FontAwesomeIcon icon={faMapMarker} size='xs' fixedWidth />
+                        </div>
+                        <div className='name'>{name}</div>
+                    </div>
+                </div>
+                <div className='icon'>
+                    <WeatherIcon icon={icon} />
+                </div>
+                <style jsx>
+                    {`
             .weather {
               position: relative;
               box-sizing: border-box;
@@ -124,10 +124,10 @@ class WeatherContent extends Component {
               align-items: center;
             }
           `}
-        </style>
-      </div>
-    )
-  }
+                </style>
+            </div>
+        )
+    }
 }
 
 export default WeatherContent

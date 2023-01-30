@@ -9,15 +9,10 @@ function addWidget(req, res) {
             if (display)
                 console.log(display)
             display.widgets.push(widget._id)
-            return display.save().then(display => {
-                if (display)
-                    return res.json({ success: true })
+            display.save().then({}).catch(err => {
+                console.log(err)
             })
         })
-        .catch(err => {
-            console.log(err)
-        })
-
 }
 
 function deleteWidget(req, res) {
