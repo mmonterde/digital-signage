@@ -49,4 +49,3 @@ bower_components/
 package-lock.json
 yarn.lock
 node_modules
-uploads/*
