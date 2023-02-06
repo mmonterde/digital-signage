@@ -6,64 +6,69 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-const API_KEY    = '7gBL0Lt9gi7yDgbUP80ShO9lmkeOx6Tkwb6CKXdLVQ1Wth9hQQtPnsaN6eucFAqB'
-const API_URL    = 'https://gop.alquimiai.com/api/v1'
+const API_KEY = '7gBL0Lt9gi7yDgbUP80ShO9lmkeOx6Tkwb6CKXdLVQ1Wth9hQQtPnsaN6eucFAqB'
+const API_URL = 'https://gop.alquimiai.com/api/v1'
 const REQ_CONFIG = {
-  method  : 'get',
-  url     : `${API_URL}/score`,
-  headers : {
-    'X-Authorization': API_KEY
-  }
+    method: 'get',
+    url: `${API_URL}/score`,
+    headers: {
+        'X-Authorization': API_KEY
+    }
 }
 
 class PilotsContent extends Component {
-  constructor(props) {
-    super(props)
+    constructor(props) {
+        super(props)
 
-    this.state = {}
-  }
+        this.state = {}
+    }
 
-  componentDidMount() {
-    axios(REQ_CONFIG)
-      .then(({ data : resp }) => {
-        const { data } = resp
-         this.setState({
-           data : data.data,
-         })
-      })
-      .catch(error => console.log(error))
-  }
 
-  render() {
-    const { data = [] } = this.state
-    return (
-		<div className='main-container'>
-      <img src='./../../uploads/championship_logo.svg' className='logo' />
-      <h1 className='title'>RANKING PILOTS</h1>
+    componentDidMount() {
+        axios(REQ_CONFIG)
+            .then(({ data: resp }) => {
+                const { data } = resp
+                this.setState({
+                    data: data.data,
+                })
+            })
+            .catch(error => console.log(error))
+    }
 
-      <div className='rating-container'>
-        { data.map( (item, i) => {
-          const { name, score } = item
-          return (
-            <div
-              className={`
+    nextState() {
+
+    }
+
+    render() {
+        const { data = [] } = this.state
+        return (
+            <div className='main-container'>
+                <img src='./../../uploads/championship_logo.svg' className='logo' />
+                <h1 className='title'>RANKING PILOTS</h1>
+
+                <div className='rating-container'>
+                    {data.map((item, i) => {
+                        const { name, score } = item
+                        return (
+                            <div
+                                className={`
                 rating ${i === 0 ? 'first-place'
-                  : i === 1 ? 'second-place'
-                  : i === 2 ? 'third-place'
-                  : null}`
-              }>
-              { i === 0 && <img src='./../../uploads/first_medal.svg' className='medal' /> }
-              { i === 1 && <img src='./../../uploads/second_medal.svg' className='medal' /> }
-              { i === 2 && <img src='./../../uploads/third_medal.svg' className='medal' /> }
-              { i >= 3 && <span className='position'>{i + 1}</span> }
-              <h4 className='pilot-name'>{name}</h4>
-              <p className='points'>{score === null ? 0 : score} pts</p>
-            </div>
-          )
-        })}
-      </div>
-      <style jsx>
-        {`
+                                        : i === 1 ? 'second-place'
+                                            : i === 2 ? 'third-place'
+                                                : null}`
+                                }>
+                                {i === 0 && <img src='./../../uploads/first_medal.svg' className='medal' />}
+                                {i === 1 && <img src='./../../uploads/second_medal.svg' className='medal' />}
+                                {i === 2 && <img src='./../../uploads/third_medal.svg' className='medal' />}
+                                {i >= 3 && <span className='position'>{i + 1}</span>}
+                                <h4 className='pilot-name'>{name}</h4>
+                                <p className='points'>{score === null ? 0 : score} pts</p>
+                            </div>
+                        )
+                    })}
+                </div>
+                <style jsx>
+                    {`
           .main-container {
             border-radius: 6px;
             display: flex;
@@ -169,10 +174,11 @@ class PilotsContent extends Component {
             color: #616161;
           }
         `}
-      </style>
-    </div>
-    )
-  }
+                </style>
+            </div>
+        )
+    }
+
 }
 
 export default PilotsContent
