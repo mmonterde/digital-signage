@@ -20,6 +20,7 @@ const DEFAULT_STATUS_BAR = []
 const DEFAULT_LAYOUT = 'spaced'
 
 class Display extends React.Component {
+
   constructor(props) {
     super(props)
     this.state = {
@@ -35,6 +36,10 @@ class Display extends React.Component {
     const { host = 'http://localhost' } = this.props
     const socket = socketIOClient(host)
     socket.on('admin:update', () => this.throttledRefresh())
+
+    setInterval(function() {
+      window.location.reload()
+    }, 300000)
   }
 
   componentDidUpdate(prevProps) {
