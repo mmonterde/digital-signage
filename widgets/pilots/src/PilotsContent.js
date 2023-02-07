@@ -44,7 +44,7 @@ class PilotsContent extends Component {
         return (
             <div className='main-container'>
                 <img src='./../../uploads/championship_logo.svg' className='logo' />
-                <h1 className='title'>RANKING PILOTS</h1>
+                <h1 className='title'>DRIVER STANDINGS</h1>
 
                 <div className='rating-container'>
                     {data.map((item, i) => {

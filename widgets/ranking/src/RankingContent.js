@@ -48,39 +48,38 @@ class RankingContent extends Component {
         const { data = [], firstPlace = {} } = this.state
         return (
             <div className='main-container'>
-                <div className='left-section'>
-                    <div className='header'>
-                        <img src='./../../uploads/championship_short_logo.svg' className='short-logo' />
-                        <h1 className='title'>RANKING ESCUDERÍAS</h1>
-                    </div>
-                    <div className='rating-container'>
-                        {data.map((item, i) => {
-                            const { team, score, id } = item
-                            return (
-                                <div className='rating' key={i}>
-                                    <span className='position'>{i + 1}</span>
-                                    <h4 className='contestant-name'>{team}</h4>
-                                    <img
-                                        src={`./../../uploads/${imageDictionary[id]}_car.svg`}
-                                        className='contestant-car'
-                                        style={{
-                                            marginRight: `${20 + (i * 15)}px`
-                                        }}
-                                    />
-                                    <p className='points'>{score === null ? 0 : score} pts</p>
-                                </div>
-                            )
-                        })}
-                    </div>
+                <img src='./../../uploads/championship_logo.svg' className='logo' />
+                <h1 className='title'>DRIVER STANDINGS</h1>
+                <div className='rating-container'>
+                    {data.map((item, i) => {
+                        const { team, score, id } = item
+                        return (
+                            <div className='rating' key={i}>
+                                <span className='position'>{i + 1}</span>
+                                <h4 className='contestant-name'>{team}</h4>
+                                <img
+                                    src={`./../../uploads/${imageDictionary[id]}_car.svg`}
+                                    className='contestant-car'
+                                    style={{
+                                        marginRight: `${20 + (i * 15)}px`
+                                    }}
+                                />
+                                <p className='points'>{score === null ? 0 : score} pts</p>
+                            </div>
+                        )
+                    })}
                 </div>
-
                 <style jsx>
                     {`
             .main-container {
-              background-color: white;
-              border-radius: 6px;
-              display: flex;
-              align-items: stretch;
+                border-radius: 6px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: #007D35;
+                box-shadow: inset 13px 26px 170px #043E1D;
+                padding: 20px 5px;
             }
 
             .left-section {
@@ -91,24 +90,19 @@ class RankingContent extends Component {
               box-shadow: inset 13px 26px 170px #043E1D;
             }
 
-            .header {
-              display: flex;
-            }
+            .logo {
+                width: 100%;
+                max-width: 200px;
+                height: auto;
+              }
 
-            .short-logo {
-              width: 50px;
-              height: auto;
-            }
-
-            .title {
-              width: 100%;
-              text-align: center;
-              margin: 0;
-              font-size: 25px;
-            }
+              .title {
+                margin: 20px 0 20px 0;
+                font-size: 25px;
+              }
 
             .rating-container {
-              margin-top: 100px;
+              margin-top: 20px;
               width: 100%;
               display: flex;
               flex-direction: column;
