@@ -7,7 +7,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 const API_KEY = '7gBL0Lt9gi7yDgbUP80ShO9lmkeOx6Tkwb6CKXdLVQ1Wth9hQQtPnsaN6eucFAqB'
-const API_URL = 'https://gop.alquimiai.com/api/v1'
+const API_URL = 'https://gpomnichannel23.itool.mx/api/v1'
 const REQ_CONFIG = {
     method: 'get',
     url: `${API_URL}/score`,
