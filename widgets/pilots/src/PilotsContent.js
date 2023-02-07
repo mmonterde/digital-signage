@@ -77,7 +77,7 @@ class PilotsContent extends Component {
             justify-content: center;
             background: #007D35;
             box-shadow: inset 13px 26px 170px #043E1D;
-            padding: 50px 5px;
+            padding: 20px 5px;
           }
 
           .logo {
@@ -87,7 +87,7 @@ class PilotsContent extends Component {
           }
 
           .title {
-            margin: 40px 0 20px 0;
+            margin: 20px 0 20px 0;
             font-size: 25px;
           }
 
