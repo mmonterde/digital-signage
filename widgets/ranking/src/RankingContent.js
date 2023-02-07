@@ -48,8 +48,8 @@ class RankingContent extends Component {
         const { data = [], firstPlace = {} } = this.state
         return (
             <div className='main-container'>
-                <img src='./../../uploads/championship_logo.svg' className='logo' />
-                <h1 className='title'>DRIVER STANDINGS</h1>
+                <img src='./../../uploads/championship_short_logo.svg' className='logo' />
+                <h1 className='title'>TEAMS STANDINGS</h1>
                 <div className='rating-container'>
                     {data.map((item, i) => {
                         const { team, score, id } = item
@@ -92,7 +92,7 @@ class RankingContent extends Component {
 
             .logo {
                 width: 100%;
-                max-width: 200px;
+                max-width: 100px;
                 height: auto;
               }
 
