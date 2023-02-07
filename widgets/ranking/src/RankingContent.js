@@ -92,7 +92,7 @@ class RankingContent extends Component {
 
             .logo {
                 width: 100%;
-                max-width: 100px;
+                max-width: 105px;
                 height: auto;
               }
 
@@ -102,11 +102,15 @@ class RankingContent extends Component {
               }
 
             .rating-container {
-              margin-top: 20px;
               width: 100%;
               display: flex;
               flex-direction: column;
               gap: 5px;
+            }
+
+            .rating-container:first-child {
+                color: #077E40;
+                font-weight: bold;
             }
 
             .rating {
