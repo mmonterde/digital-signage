@@ -79,7 +79,7 @@ class RankingContent extends Component {
                 justify-content: center;
                 background: #007D35;
                 box-shadow: inset 13px 26px 170px #043E1D;
-                padding: 20px 5px;
+                padding: 20px 20px;
             }
 
             .left-section {
