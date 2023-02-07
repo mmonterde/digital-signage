@@ -49,7 +49,7 @@ class RankingContent extends Component {
         return (
             <div className='main-container'>
                 <img src='./../../uploads/championship_short_logo.svg' className='logo' />
-                <h1 className='title'>TEAMS STANDINGS</h1>
+                <h1 className='title'>TEAMteams STANDINGS</h1>
                 <div className='rating-container'>
                     {data.map((item, i) => {
                         const { team, score, id } = item
