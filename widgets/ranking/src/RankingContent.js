@@ -129,9 +129,9 @@ class RankingContent extends Component {
               width: 35px;
               height: 35px;
               display: flex;
-              color: #979797;
-              font-size: 18px;
-              font-weight: 600;
+              color: #000;
+              font-size: 22px;
+              font-weight: bold;
               align-items: center;
               justify-content: center;
             }
@@ -151,8 +151,8 @@ class RankingContent extends Component {
 
             .points {
               font-size: 18px;
-              font-weight: 600;
-              color: #979797;
+              font-weight: blod;
+              color: #000;
               margin: 0;
               width: fit-content;
               white-space: nowrap;
