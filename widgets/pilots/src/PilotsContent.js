@@ -112,8 +112,8 @@ class PilotsContent extends Component {
           }
 
           .rating .pilot-name {
-            font-size: 18px;
-            color: #979797;
+            font-size: 22px;
+            color: #000;
             font-weight: 500;
             margin: 0;
             width: 100%;
@@ -151,7 +151,8 @@ class PilotsContent extends Component {
           .first-place .pilot-name,
           .first-place .points {
             font-weight: bold;
-            color: #077E40;
+            color: #000;
+            font-size: 25px;
           }
 
           .second-place {
@@ -171,7 +172,8 @@ class PilotsContent extends Component {
           .third-place .pilot-name,
           .third-place .points {
             font-weight: bold;
-            color: #616161;
+            color: #000;
+            font-size: 22px;
           }
         `}
                 </style>
