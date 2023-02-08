@@ -130,8 +130,8 @@ class PilotsContent extends Component {
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #979797;
-            font-size: 18px;
+            color: #000;
+            font-size: 20px;
           }
 
           .points {
