@@ -112,10 +112,10 @@ class PilotsContent extends Component {
           }
 
           .rating .pilot-name {
+            font-weight:bold;
             font-size: 22px;
             letter-spacing: 1px;
             color: #000;
-            font-weight: 500;
             margin: 0;
             width: 100%;
           }
