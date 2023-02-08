@@ -135,9 +135,9 @@ class PilotsContent extends Component {
           }
 
           .points {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            color: #979797;
+            color: #000;
             margin: 0;
             width: fit-content;
             white-space: nowrap;

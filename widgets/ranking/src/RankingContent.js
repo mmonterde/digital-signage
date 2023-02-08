@@ -130,18 +130,18 @@ class RankingContent extends Component {
               height: 35px;
               display: flex;
               color: #000;
-              font-size: 22px;
+              font-size: 25px;
               font-weight: bold;
               align-items: center;
               justify-content: center;
             }
 
             .contestant-name {
-              font-size: 18px;
-              color: #979797;
-              margin: 0;
-              font-weight: 600;
-              width: 100%;
+                font-weight: bold;
+                color: #000;
+                font-size: 25px;
+                margin: 0;
+                width: 100%;
             }
 
             .contestant-car {
@@ -150,8 +150,8 @@ class RankingContent extends Component {
             }
 
             .points {
-              font-size: 18px;
-              font-weight: blod;
+              font-size: 22px;
+              font-weight: bold;
               color: #000;
               margin: 0;
               width: fit-content;
