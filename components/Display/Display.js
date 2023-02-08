@@ -37,11 +37,11 @@ class Display extends React.Component {
     const socket = socketIOClient(host)
     socket.on('admin:update', () => this.throttledRefresh())
 
-    /*
-     * setInterval(function() {
-     *   window.location.reload()
-     * }, 300000)
-     */
+    
+    setInterval(function() {
+        window.location.reload()
+     }, 300000)
+
   }
 
   componentDidUpdate(prevProps) {
