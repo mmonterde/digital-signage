@@ -131,6 +131,7 @@ class PilotsContent extends Component {
             justify-content: center;
             align-items: center;
             color: #000;
+            font-weight:bold;
             font-size: 20px;
           }
 
